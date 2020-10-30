@@ -1,24 +1,36 @@
 <template>
   <div class="body">
-  <div class="stars">
-    <div class="star" ref="star"  v-for="(item,index) in starsCount" :key="index"></div>
-  </div>
+    <div class="stars">
+      <div
+        class="star"
+        ref="star"
+        v-for="(item, index) in starsCount"
+        :key="index"
+      ></div>
+    </div>
     <h1 class="tit">Welcome to Mr Div!</h1>
     <div id="sign_wrap">
-      <div v-if="status==1" class="main signIn">
-        <input v-model="name" placeholder="请输入登录账号">
-        <input v-model="password" @keyup.enter="signIn" placeholder="请输入密码" type="password">
-        <el-button @click="signIn" class="sign" >Sign In</el-button>
-        <p class="toSignUp"><span @click="toSignUp"  style="float: right"> Sign Up !</span></p>
+      <div v-if="status == 1" class="main signIn">
+        <input v-model="name" placeholder="请输入登录账号" />
+        <input
+          v-model="password"
+          @keyup.enter="signIn"
+          placeholder="请输入密码"
+          type="password"
+        />
+        <el-button @click="signIn" class="sign">Sign In</el-button>
+        <p class="toSignUp">
+          <span @click="toSignUp" style="float: right"> Sign Up !</span>
+        </p>
       </div>
-      <div v-else-if="status==2" class="main signUp">
-        <input v-model="name" placeholder="请输入登录账号">
-        <input v-model="nickName" placeholder="请输入昵称">
-        <input v-model="password" placeholder="请输入密码" type="password">
-        <el-button @click="signUp" class="sign" >Sign Up</el-button>
-        <p class="toSignUp"><span @click="back" > Back to Sign In !</span></p>
+      <div v-else-if="status == 2" class="main signUp">
+        <input v-model="nickName" placeholder="请输入昵称" />
+        <input v-model="name" placeholder="请输入登录账号" />
+        <input v-model="password" placeholder="请输入密码" type="password" />
+        <el-button @click="signUp" class="sign">Sign Up</el-button>
+        <p class="toSignUp"><span @click="back"> Back to Sign In !</span></p>
       </div>
-      <div v-else-if="status==3" class="loading">
+      <div v-else-if="status == 3" class="loading">
         <div v-if="!txtSignIn" class="outside"></div>
         <p v-else class="txt">Sign In</p>
       </div>
@@ -45,17 +57,18 @@ export default {
   mounted() {
     let _this = this;
     // 原生js
-    let _starList = document.getElementsByClassName("star")
-    let starArr = Array.prototype.slice.call(_starList)
+    let _starList = document.getElementsByClassName("star");
+    let starArr = Array.prototype.slice.call(_starList);
     // vue
-    let starList = this.$refs.star
+    let starList = this.$refs.star;
     // 遍历添加样式
     starArr.forEach(item => {
-      var s = 0.2 + (Math.random() * 1);
-      var thisDistance = _this.distance + (Math.random() * 300);
-      item.style.transformOrigin = `0 0 ${thisDistance}px`
-      item.style.transform = `translate3d(0,0,-${thisDistance}px) rotateY(${(Math.random() * 360)}deg) rotateX(${(Math.random() * -50)}deg) scale(${s},${s})`
-    })
+      var s = 0.2 + Math.random() * 1;
+      var thisDistance = _this.distance + Math.random() * 300;
+      item.style.transformOrigin = `0 0 ${thisDistance}px`;
+      item.style.transform = `translate3d(0,0,-${thisDistance}px) rotateY(${Math.random() *
+        360}deg) rotateX(${Math.random() * -50}deg) scale(${s},${s})`;
+    });
   },
   methods: {
     toSignUp: function() {
@@ -186,53 +199,64 @@ export default {
 };
 </script>
 
-<style scoped lang='scss'>
-  .body {
-    min-height:80vh;
-    padding-top: 24vh;
-    background: radial-gradient(200% 100% at bottom center, #f7f7b6, #e96f92, #75517d, #1b2947);
-    background: radial-gradient(220% 105% at top center, #1b2947 10%, #75517d 40%, #e96f92 65%, #f7f7b6);
-    background-attachment: fixed;
-    overflow: hidden;
+<style scoped lang="scss">
+.body {
+  min-height: 80vh;
+  padding-top: 24vh;
+  background: radial-gradient(
+    200% 100% at bottom center,
+    #f7f7b6,
+    #e96f92,
+    #75517d,
+    #1b2947
+  );
+  background: radial-gradient(
+    220% 105% at top center,
+    #1b2947 10%,
+    #75517d 40%,
+    #e96f92 65%,
+    #f7f7b6
+  );
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.tit {
+  text-align: center;
+  margin: 60px 0;
+  color: #ecf5ff;
+  font-size: 40px;
+  font-weight: 500;
+}
+@keyframes rotate {
+  0% {
+    transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
   }
-  .tit{
-    text-align: center;
-    margin: 60px 0;
-    color: #ecf5ff;
-    font-size: 40px;
-    font-weight: 500 ;
+  100% {
+    transform: perspective(400px) rotateZ(20deg) rotateX(-40deg)
+      rotateY(-360deg);
   }
-  @keyframes rotate {
-    0% {
-      transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
-    }
-    100% {
-      transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
-    }
-  }
+}
 
-  .stars {
-    transform: perspective(500px);
-    transform-style: preserve-3d;
-    position: absolute;
-    bottom: 0;
-    perspective-origin: 50% 100%;
-    left: 50%;
-    animation: rotate 90s infinite linear;
-  }
+.stars {
+  transform: perspective(500px);
+  transform-style: preserve-3d;
+  position: absolute;
+  bottom: 0;
+  perspective-origin: 50% 100%;
+  left: 50%;
+  animation: rotate 90s infinite linear;
+}
 
-  .star {
-    width: 2px;
-    height: 2px;
-    background: #F7F7B6;
-    position: absolute;
-    top: 0;
-    left: 0;
-    backface-visibility: hidden;
-  }
+.star {
+  width: 2px;
+  height: 2px;
+  background: #f7f7b6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
 #sign_wrap {
-
-
   width: 300px;
   margin: 0 auto 0;
   input {
@@ -345,10 +369,10 @@ export default {
     }
   }
 }
-  @media screen and (max-width: 1000px) {
-    .body {
-      padding-top: 6vh;
-      min-height:94vh;
-    }
+@media screen and (max-width: 1000px) {
+  .body {
+    padding-top: 6vh;
+    min-height: 94vh;
   }
+}
 </style>
