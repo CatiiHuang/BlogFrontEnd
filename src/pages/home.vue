@@ -140,7 +140,6 @@ export default {
       window.onscroll = function() {
         if (getScrollTop() + getWindowHeight() >= getScrollHeight() - 2) {
           if (that.page <= Math.floor(that.total / that.pageSize)) {
-            that.page = that.page += 1;
             getData();
           }
         }
@@ -160,8 +159,9 @@ export default {
         pageSize: this.pageSize
       });
       this.loading = false;
-      this.items = [...this.items, ...res.data.data.reverse()];
+      this.items = [...this.items, ...res.data.data];
       this.total = res.data.total;
+      this.page = this.page += 1;
     }
   }
 };
