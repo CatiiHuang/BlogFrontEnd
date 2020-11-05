@@ -23,11 +23,23 @@
         </transition>
       </div>
 
-      <!-- <Aplayer :music="musicList[0]" :list="musicList" class="aplayer"
-             :shuffle="t"  :showLrc="t"   v-if="musicList.length>=1"
-             repeat="repeat-all" :listFolded="t" :float="t" theme="#9d9d9d"
-             listMaxHeight="100"  :howLrc="t" :autoplay="t"  :mini="min">
-    </Aplayer> -->
+      <Aplayer
+        :music="musicList[0]"
+        :list="musicList"
+        class="aplayer"
+        :shuffle="t"
+        :showLrc="t"
+        v-if="musicList.length >= 1"
+        repeat="repeat-all"
+        :listFolded="t"
+        :float="t"
+        theme="#9d9d9d"
+        listMaxHeight="100"
+        :howLrc="t"
+        :autoplay="t"
+        :mini="min"
+      >
+      </Aplayer>
 
       <div class="footer">
         <common-footer :times="times"></common-footer>

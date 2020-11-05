@@ -2,7 +2,12 @@
   <header>
     <div class="wrapper">
       <el-row>
-        <el-col :xs="20" :sm="4" :md="4" :lg="4" :xl="4"><div class="logo">Mr Div,</div></el-col>
+        <el-col :xs="20" :sm="4" :md="4" :lg="4" :xl="4">
+          <div class="logo">
+            Catii ,
+            <img class="logo-icon" src="/static/img/cat.png" alt="" />
+          </div>
+        </el-col>
         <el-col :xs="0" :sm="20" :md="20" :lg="20" :xl="20">
           <el-menu
             :default-active="activeIndex"
@@ -11,38 +16,89 @@
             @select="handleSelect"
             background-color="#2d2d2d"
             text-color="#9d9d9d"
-            active-text-color="#fff">
-            <el-menu-item index="1"><router-link to="/"><i class="iconfont icon-home"></i>Home</router-link></el-menu-item>
-            <el-menu-item index="2"><router-link to="/archives"><i class="iconfont icon-archives"></i>Archives</router-link></el-menu-item>
-            <el-menu-item index="3"><router-link to="/categories"><i class="iconfont icon-tubiao13"></i>Categories</router-link></el-menu-item>
-<!--            <el-menu-item index="4"><router-link to="/collections"><i class="iconfont icon-shoucang"></i>Collections</router-link></el-menu-item>-->
-            <el-menu-item index="5"><router-link to="/demo"><i class="iconfont icon-play"></i>Demo</router-link></el-menu-item>
-            <el-menu-item index="6"><router-link to="/about"><i class="iconfont icon-meho"></i>About</router-link></el-menu-item>
-            <el-menu-item index="7" v-if="isSignIn===0"><router-link :class="[activeIndex==7?'meBtnOn':'meBtnOff']" to="/sign">Sign In</router-link></el-menu-item>
-            <el-menu-item index="7" v-else-if="isSignIn===1"><router-link :class="[activeIndex==7?'meBtnOn':'meBtnOff']" to="/admin/artList">{{nickName}}</router-link></el-menu-item>
-            <el-menu-item index="7" v-else-if="isSignIn===2"><router-link :class="[activeIndex==7?'meBtnOn':'meBtnOff']" to="/visiter">{{nickName}}</router-link></el-menu-item>
+            active-text-color="#fff"
+          >
+            <el-menu-item index="1"
+              ><router-link to="/"
+                ><i class="iconfont icon-home"></i>Home</router-link
+              ></el-menu-item
+            >
+            <el-menu-item index="2"
+              ><router-link to="/archives"
+                ><i class="iconfont icon-archives"></i>Archives</router-link
+              ></el-menu-item
+            >
+            <el-menu-item index="3"
+              ><router-link to="/categories"
+                ><i class="iconfont icon-tubiao13"></i>Categories</router-link
+              ></el-menu-item
+            >
+            <!--            <el-menu-item index="4"><router-link to="/collections"><i class="iconfont icon-shoucang"></i>Collections</router-link></el-menu-item>-->
+            <el-menu-item index="5"
+              ><router-link to="/demo"
+                ><i class="iconfont icon-play"></i>Demo</router-link
+              ></el-menu-item
+            >
+            <el-menu-item index="6"
+              ><router-link to="/about"
+                ><i class="iconfont icon-meho"></i>About</router-link
+              ></el-menu-item
+            >
+            <el-menu-item index="7" v-if="isSignIn === 0"
+              ><router-link
+                :class="[activeIndex == 7 ? 'meBtnOn' : 'meBtnOff']"
+                to="/sign"
+                >Sign In</router-link
+              ></el-menu-item
+            >
+            <el-menu-item index="7" v-else-if="isSignIn === 1"
+              ><router-link
+                :class="[activeIndex == 7 ? 'meBtnOn' : 'meBtnOff']"
+                to="/admin/artList"
+                >{{ nickName }}</router-link
+              ></el-menu-item
+            >
+            <el-menu-item index="7" v-else-if="isSignIn === 2"
+              ><router-link
+                :class="[activeIndex == 7 ? 'meBtnOn' : 'meBtnOff']"
+                to="/visiter"
+                >{{ nickName }}</router-link
+              ></el-menu-item
+            >
           </el-menu>
         </el-col>
 
         <el-col :xs="4" :sm="0" :md="0" :lg="0" :xl="0" class="">
           <div class="nav-mob">
             <!-- <div v-if="(isSignIn===1||isSignIn===2)&&navMobile" @click="navToggle" class="avatar"></div> -->
-            <img v-if="(isSignIn===1||isSignIn===2)&&navMobile" @click="navToggle" class="avatar" :src="avatar" alt="">
+            <img
+              v-if="(isSignIn === 1 || isSignIn === 2) && navMobile"
+              @click="navToggle"
+              class="avatar"
+              :src="avatar"
+              alt=""
+            />
             <i v-else class="el-icon-menu " @click="navToggle"></i>
-            <transition  name="slide-fade">
+            <transition name="slide-fade">
               <div v-if="navMobile" class="content">
-                <ul  @click='slideUp'>
+                <ul @click="slideUp">
                   <li><router-link to="/">Home</router-link></li>
                   <li><router-link to="/archives">Archives</router-link></li>
-                  <li><router-link to="/categories">Categories</router-link></li>
-<!--                  <li><router-link to="/collections">Collections</router-link></li>-->
+                  <li>
+                    <router-link to="/categories">Categories</router-link>
+                  </li>
+                  <!--                  <li><router-link to="/collections">Collections</router-link></li>-->
                   <li><router-link to="/demo">Demo</router-link></li>
                   <li><router-link to="/about">About</router-link></li>
-                  <li v-if="isSignIn===0"><router-link  to="/sign">Sign In</router-link></li>
-                  <li v-if="isSignIn===1||isSignIn===2"><router-link  to="/visiter">{{nickName}}</router-link></li>
+                  <li v-if="isSignIn === 0">
+                    <router-link to="/sign">Sign In</router-link>
+                  </li>
+                  <li v-if="isSignIn === 1 || isSignIn === 2">
+                    <router-link to="/visiter">{{ nickName }}</router-link>
+                  </li>
                 </ul>
               </div>
-            </transition >
+            </transition>
           </div>
         </el-col>
       </el-row>
@@ -54,7 +110,7 @@
 export default {
   data() {
     return {
-      avatar:"",
+      avatar: "",
       // activeIndex: '1',
       navMobile: false
     };
@@ -65,8 +121,8 @@ export default {
     },
     navToggle() {
       if (localStorage.getItem("avatar") === "null") {
-        this.avatar =  "/static/img/avatar.png";
-      }else {
+        this.avatar = "/static/img/avatar.png";
+      } else {
         this.avatar = localStorage.getItem("avatar");
       }
       this.navMobile = this.navMobile ? false : true;
@@ -87,7 +143,7 @@ export default {
     },
     nickName() {
       return localStorage.getItem("nickName");
-    },
+    }
   }
 };
 </script>
@@ -100,9 +156,18 @@ header {
   box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
   .logo {
-    line-height: 50px;
     font-size: 16px;
+    height: 60px;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+    .logo-icon {
+      height: 23px;
+      width: 23px;
+      margin-left: 10px;
+      position: relative;
+      top: -2px;
+    }
   }
   .nav-pc {
     border-bottom: none;
@@ -171,7 +236,6 @@ header {
   header {
     margin-bottom: 20px;
     .logo {
-      line-height: 60px;
       font-size: 18px;
     }
   }

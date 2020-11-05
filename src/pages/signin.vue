@@ -8,7 +8,7 @@
         :key="index"
       ></div>
     </div>
-    <h1 class="tit">Welcome to Mr Div!</h1>
+    <h1 class="tit">Welcome to Catii !</h1>
     <div id="sign_wrap">
       <div v-if="status == 1" class="main signIn">
         <input v-model="name" placeholder="请输入登录账号" />
