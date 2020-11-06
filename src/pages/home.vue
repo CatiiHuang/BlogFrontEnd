@@ -5,6 +5,7 @@
         <el-col :xs="24" :md="18" :lg="18" :xl="18">
           <div class="main">
             <ListHome v-loading="loading" :items="items"></ListHome>
+            <div class="bottom-text">到底啦~</div>
           </div>
         </el-col>
         <el-col :xs="0" :md="6" :lg="6" :xl="6">
@@ -35,12 +36,7 @@
             <div class="card">
               <p class="title"></p>
               <div class="row">
-                <!--                    <a class="link" href="#" target="_blank">哈维</a>-->
-                <!--                    <a class="link" href="#" target="_blank">的光和热</a>-->
-                <!--                    <a class="link" href="#" target="_blank">Secret Blog</a>-->
-                <!--                    <a class="link" href="#" target="_blank">Secret Blog</a>-->
-                <!--                    <a class="link" href="#" target="_blank">Secret Blog</a>-->
-                <!--                    <a class="link" href="#" target="_blank">Secret Blog</a>-->
+                <!-- <a class="link" href="#" target="_blank">哈维</a> -->
               </div>
             </div>
           </div>
@@ -74,7 +70,7 @@ export default {
   methods: {
     test() {
       const that = this;
-      let jieLiu = (func, delay = 1000) => {
+      let jieLiu = (func, delay = 700) => {
         let timer = null;
         return function() {
           if (!timer) {
@@ -138,7 +134,7 @@ export default {
       const getData = jieLiu(that.getList);
 
       window.onscroll = function() {
-        if (getScrollTop() + getWindowHeight() >= getScrollHeight() - 2) {
+        if (getScrollTop() + getWindowHeight() >= getScrollHeight() - 1.5) {
           if (that.page <= Math.floor(that.total / that.pageSize)) {
             getData();
           }
@@ -174,6 +170,11 @@ export default {
   margin: 0 16px;
   z-index: 55;
   padding: 10px;
+  .bottom-text {
+    text-align: center;
+    margin-top: 6px;
+    color: rgb(144, 147, 153);
+  }
 }
 .aside {
   background: #f8f8fd;

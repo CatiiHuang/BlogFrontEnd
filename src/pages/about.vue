@@ -1,70 +1,94 @@
 <template>
   <div class="page" id="page" @click="clickTips">
-      <div class="wrapper">
-        <el-row>
-            <el-col :xs="24" :sm="4" :md="18" :lg="18" :xl="18">
-              <div class="main">
-                <p class="title">About</p>
-                <!-- <list_article :items="items" type="archives"></list_article> -->
-                <div class="card">
-                  <p class="card-title" id="anchor-about">关于我</p>
-<!--                  <p class="txt">做前端有2年了，目前大三在读。</p>-->
-<!--                </div>-->
-<!--                <div class="card">-->
-<!--                  <p class="card-title" id="anchor-contact">联系我</p>-->
-                  <ul style="padding-top: 2px">
-                    <li>个人主页：<a href="http://www.mrdiv.top:8081" target="_blank">Mr Div</a></li>
-<!--                    <li>Github：<a href="https://github.com/bestRenekton" target="_blank">bestRenekton</a></li>-->
-<!--                    <li><a href="https://www.zhihu.com/people/yang-pang-zi-40/activities" target="_blank">知乎</a></li>-->
-<!--                    <li><a href="http://music.163.com/#/user/home?id=272667179" target="_blank">网易云</a></li>-->
-                    <li>Email： <a href="mailto:740898800@qq.com">740898800@qq.com</a></li>
-                    <li>QQ：740898800</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <p class="card-title" id="anchor-us">关于本站</p>
-<!--                  <p class="txt">这个博客主要用于记录一个菜鸟程序猿的Growth之路.</p>-->
-<!--                  <p class="txt">这也是自己第一次做博客，希望和大家多多交流，一起成长！</p>-->
-<!--                  <p class="txt">欢迎大家提一些对本站的建议，可以直接在下面留言。</p>-->
-                  <ul>
-                    <li>实现了用户注册、登录、检测登录、博客管理（文章的修改和删除）、文章编辑（Markdown）、标签分类等功能。</li>
-                    <li>前端使用vue全家桶（cli,router,vuex,axios），框架用的elmentUI</li>
-                    <li>后端使用node,框架用的express,mongoose</li>
-                    <li>数据库采用mongoDB</li>
-<!--                    <li>模板来自大佬 <a href="https://github.com/bestRenekton" target="_blank"><i class="iconfont icon-github"></i></a></li>-->
-                  </ul>
-                </div>
-                <div class="card">
-<!--                  <p class="card-title" id="anchor-friend">友情链接</p>-->
-<!--                  <div class="row-link">-->
-<!--                    <a class="link" href="https://www.yangyuetao.cn" target="_blank">哈维</a>|-->
-<!--                    <a class="link" href="https://www.yangyuetao.cn" target="_blank">的光和热</a>|-->
-<!--                    <a class="link" href="https://www.yangyuetao.cn" target="_blank">Secret Blog</a>|-->
-<!--                    <a class="link" href="https://www.yangyuetao.cn" target="_blank">Secret Blog</a>|-->
-<!--                    <a class="link" href="https://www.yangyuetao.cn" target="_blank">Secret Blog</a>|-->
-<!--                    <a class="link" href="https://www.yangyuetao.cn" target="_blank">Secret Blog</a>-->
-<!--                  </div>-->
-                  <div style="text-align: center;margin-top:6px; color: #909399;">到底啦~</div>
+    <div class="wrapper">
+      <el-row>
+        <el-col :xs="24" :sm="4" :md="18" :lg="18" :xl="18">
+          <div class="main">
+            <p class="title">About</p>
+            <!-- <list_article :items="items" type="archives"></list_article> -->
+            <div class="card">
+              <p class="card-title" id="anchor-about">关于我</p>
+              <!-- <p class="txt">
+                做前端有3年了，还是小菜鸡一个，目前大四，就职于鹅厂。
+              </p> -->
+              <!--                </div>-->
+              <!-- <div class="card">-->
+              <!--                  <p class="card-title" id="anchor-contact">联系我</p> -->
+              <ul style="padding-top: 2px">
+                <li>
+                  个人主页：<a href="http://www.mrdiv.top:8081" target="_blank"
+                    >Catii,</a
+                  >
+                </li>
+                <!-- <li>
+                  Github：<a
+                    href="https://github.com/bestRenekton"
+                    target="_blank"
+                    >bestRenekton</a
+                  >
+                </li> -->
+                <li>
+                  Email： <a href="mailto:740898800@qq.com">740898800@qq.com</a>
+                </li>
+                <li>QQ：740898800</li>
+              </ul>
+            </div>
+            <div class="card">
+              <p class="card-title" id="anchor-us">关于本站</p>
 
-                </div>
+              <ul>
+                <li>
+                  实现了用户注册、登录、检测登录、博客管理（文章的修改和删除）、文章编辑（Markdown）、标签分类等功能。
+                </li>
+                <li>
+                  前端使用vue全家桶（cli,router,vuex,axios），框架用的elmentUI
+                </li>
+                <li>后端使用node,框架用的express,mongoose</li>
+                <li>数据库采用mongoDB</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div style="text-align: center;margin-top:6px; color: #909399;">
+                到底啦~
               </div>
-            </el-col>
-            <el-col :xs="0" :sm="4" :md="6" :lg="6" :xl="6">
-              <div class="aside">
-                <p class="title">Content</p>
-                <!-- <list_content :items="items"></list_content> -->
-                  <div class="content">
-                    <ul>
-                      <li><a href="javascript:;" class="title" @click="anchor('about')">关于我</a></li>
-                      <li><a href="javascript:;" class="title" @click="anchor('contact')">联系我</a></li>
-                      <li><a href="javascript:;" class="title" @click="anchor('us')">关于本站</a></li>
-                      <li><a href="javascript:;" class="title" @click="anchor('friend')">友情链接</a></li>
-                    </ul>
-                  </div>
-              </div>
-            </el-col>
-        </el-row>
-      </div>
+            </div>
+          </div>
+        </el-col>
+        <el-col :xs="0" :sm="4" :md="6" :lg="6" :xl="6">
+          <div class="aside">
+            <p class="title">Content</p>
+            <!-- <list_content :items="items"></list_content> -->
+            <div class="content">
+              <ul>
+                <li>
+                  <a href="javascript:;" class="title" @click="anchor('about')"
+                    >关于我</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="javascript:;"
+                    class="title"
+                    @click="anchor('contact')"
+                    >联系我</a
+                  >
+                </li>
+                <li>
+                  <a href="javascript:;" class="title" @click="anchor('us')"
+                    >关于本站</a
+                  >
+                </li>
+                <li>
+                  <a href="javascript:;" class="title" @click="anchor('friend')"
+                    >友情链接</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
   </div>
 </template>
 
@@ -253,4 +277,3 @@ export default {
   }
 }
 </style>
-
