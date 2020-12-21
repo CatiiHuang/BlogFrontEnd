@@ -5,7 +5,9 @@
         <el-col :xs="24" :md="18" :lg="18" :xl="18">
           <div class="main">
             <ListHome v-loading="loading" :items="items"></ListHome>
-            <div class="bottom-text">到底啦~</div>
+            <div v-if="page > Math.floor(total / pageSize)" class="bottom-text">
+              到底啦~
+            </div>
           </div>
         </el-col>
         <el-col :xs="0" :md="6" :lg="6" :xl="6">

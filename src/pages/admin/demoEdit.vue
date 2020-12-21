@@ -183,6 +183,8 @@ export default {
   height: 178px;
 }
 .avatar {
+  width: 178px;
+  height: 178px;
   border: 1px dashed #d9d9d9;
 }
 .avatar-uploader-icon {

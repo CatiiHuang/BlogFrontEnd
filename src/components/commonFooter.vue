@@ -9,7 +9,7 @@
       <p>欢迎光临</p>
       <p>本站已经被访问 {{ times }} 次！</p>
       <a class="beian" target="_blank" href="http://beian.miit.gov.cn"
-        >渝ICP备19017793号-2</a
+        >渝ICP备19017793-2号</a
       >
     </div>
     <transition name="slide-fade">

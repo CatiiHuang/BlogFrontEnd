@@ -5,28 +5,29 @@
         <el-col :xs="24" :sm="4" :md="18" :lg="18" :xl="18">
           <div class="main">
             <p class="title">About</p>
-            <!-- <list_article :items="items" type="archives"></list_article> -->
+            <list_article :items="items" type="archives"></list_article>
             <div class="card">
               <p class="card-title" id="anchor-about">关于我</p>
-              <!-- <p class="txt">
-                做前端有3年了，还是小菜鸡一个，目前大四，就职于鹅厂。
-              </p> -->
-              <!--                </div>-->
-              <!-- <div class="card">-->
-              <!--                  <p class="card-title" id="anchor-contact">联系我</p> -->
+              <p class="txt">
+                做前端有3年了，大四，前端相关的各类知识都有一定的了解，微信小程序，Reac全家桶，Uni/Taro跨
+                端应用，Three.js，Echarts.js，D3，nodeJs，egg.js，MySQL，MongoDB都会一点，目前就职于鹅厂，主攻webGL，Three.js，数据/3D/场景可视化等计算机图形方向，想要交流技术或者内推的朋友可以联系我。
+              </p>
+            </div>
+            <div class="card">
+              <p class="card-title" id="anchor-contact">联系我</p>
               <ul style="padding-top: 2px">
                 <li>
-                  个人主页：<a href="http://www.mrdiv.top:8081" target="_blank"
+                  个人主页：<a href="http://www.catii.top" target="_blank"
                     >Catii,</a
                   >
                 </li>
-                <!-- <li>
+                <li>
                   Github：<a
-                    href="https://github.com/bestRenekton"
+                    href="https://github.com/CatiiHuang"
                     target="_blank"
-                    >bestRenekton</a
+                    >CatiiHuang</a
                   >
-                </li> -->
+                </li>
                 <li>
                   Email： <a href="mailto:740898800@qq.com">740898800@qq.com</a>
                 </li>
@@ -38,10 +39,10 @@
 
               <ul>
                 <li>
-                  实现了用户注册、登录、检测登录、博客管理（文章的修改和删除）、文章编辑（Markdown）、标签分类等功能。
+                  实现了用户注册、登录、鉴权、留言评论、Demo管理、博客管理（文章的修改和删除）、文章编辑（Markdown）、标签分类等功能。
                 </li>
                 <li>
-                  前端使用vue全家桶（cli,router,vuex,axios），框架用的elmentUI
+                  前端使用vue全家桶，框架用的elmentUI
                 </li>
                 <li>后端使用node,框架用的express,mongoose</li>
                 <li>数据库采用mongoDB</li>
@@ -170,7 +171,7 @@ export default {
       font-size: 26px;
     }
     .txt {
-      font-size: 16px;
+      font-size: 14px;
       margin: 0 20px 10px;
     }
     > ul {
