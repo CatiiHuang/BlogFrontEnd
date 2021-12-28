@@ -14,11 +14,11 @@
           <div class="aside">
             <div class="card">
               <p class="title">ABOUT ME</p>
-              <img class="pic" src="../../static/img/p2.jpg" alt="" />
+              <img class="pic" src="../../static/img/p1.jpg" alt="" />
               <div class="row">
                 <p>爱你所爱 ，行你所行 。</p>
                 <div class="icons">
-                  <a href="#" target="_self"
+                  <a href="https://github.com/CatiiHuang" target="_self"
                     ><i class="iconfont icon-github"></i
                   ></a>
                   <a href="#" target="_self"

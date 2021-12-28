@@ -9,8 +9,7 @@
             <div class="card">
               <p class="card-title" id="anchor-about">关于我</p>
               <p class="txt">
-                做前端有3年了，大四，前端相关的各类知识都有一定的了解，微信小程序，Reac全家桶，Uni/Taro跨
-                端应用，Three.js，Echarts.js，D3，nodeJs，egg.js，MySQL，MongoDB都会一点，目前就职于鹅厂，主攻webGL，Three.js，数据/3D/场景可视化等计算机图形方向，想要交流技术或者内推的朋友可以联系我。
+                前端菜鸡，目前就职于鹅厂，主攻webGL，Three.js，Babylon.js，数据/场景/3D可视化等计算机图形方向，想要交流技术或者内推的朋友可以联系我。
               </p>
             </div>
             <div class="card">
@@ -34,7 +33,7 @@
                 <li>QQ：740898800</li>
               </ul>
             </div>
-            <div class="card">
+            <!-- <div class="card">
               <p class="card-title" id="anchor-us">关于本站</p>
 
               <ul>
@@ -47,7 +46,7 @@
                 <li>后端使用node,框架用的express,mongoose</li>
                 <li>数据库采用mongoDB</li>
               </ul>
-            </div>
+            </div> -->
             <div class="card">
               <div style="text-align: center;margin-top:6px; color: #909399;">
                 到底啦~
