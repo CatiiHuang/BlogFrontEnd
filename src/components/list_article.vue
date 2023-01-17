@@ -17,7 +17,7 @@
           >
             <i class="iconfont icon-tubiao13"></i>
             <template
-              v-for="tag in li.category.filter(item => item !== 'Onwer')"
+              v-for="tag in li.category.filter(item => item !== 'Own')"
             >
               <span class="link" :key="tag.id">{{ tag }}</span>
             </template>
@@ -29,7 +29,7 @@
           >
             <i class="iconfont icon-tubiao13"></i>
             <template
-              v-for="tag in li.category.filter(item => item !== 'Onwer')"
+              v-for="tag in li.category.filter(item => item !== 'Own')"
             >
               <span class="link" :key="tag.id" @click="anchor(tag)">{{
                 tag
@@ -54,10 +54,10 @@ export default {
     artItems() {
       if (localStorage.getItem("user_name") !== "admin") {
         const artList = this.items
-          .filter(({ type }) => type !== "Onwer")
+          .filter(({ type }) => type !== "Own")
           .map(item => {
             item.list = item.list.filter(
-              ({ category }) => !category.includes("Onwer")
+              ({ category }) => !category.includes("Own")
             );
             return item;
           })

@@ -87,7 +87,7 @@ export default {
         "Electron",
         "ECharts",
         "WX"
-        // "Onwer"
+        // "Own"
       ]
     };
   },
@@ -113,17 +113,17 @@ export default {
   watch: {
     category(vals) {
       // 同步switch状态
-      this.isOpen = !vals.includes("Onwer");
+      this.isOpen = !vals.includes("Own");
     }
   },
   methods: {
     openStateChange(state) {
-      // 过滤Onwer标签
+      // 过滤Own标签
       if (state === true)
-        this.category = this.category.filter(item => item !== "Onwer");
-      // 添加Onwer标签
-      if (state === false && !this.category.includes("Onwer"))
-        this.category.push("Onwer");
+        this.category = this.category.filter(item => item !== "Own");
+      // 添加Own标签
+      if (state === false && !this.category.includes("Own"))
+        this.category.push("Own");
     },
     $imgAdd(pos, $file) {
       this.$axios

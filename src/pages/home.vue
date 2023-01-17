@@ -159,7 +159,7 @@ export default {
       //仅管理员可见内容
       if (localStorage.getItem("user_name") !== "admin") {
         res.data.data = res.data.data.filter(
-          ({ category }) => !category.includes("Onwer")
+          ({ category }) => !category.includes("Own")
         );
       }
       this.loading = false;
