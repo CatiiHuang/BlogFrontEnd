@@ -9,7 +9,7 @@
             <div class="card">
               <p class="card-title" id="anchor-about">关于我</p>
               <p class="txt">
-                前端菜鸡，目前就职于鹅厂，主攻webGL，Three.js，Babylon.js，数据/场景/3D可视化等计算机图形方向，想要交流技术或者内推的朋友可以联系我。
+                前端菜鸡，目前就职于阿里高德，从事高德地图|高德打车相关业务线开发，之前在鹅厂主攻webGL，Three.js，Babylon.js，数据/3D可视化/大数据中台等业务方向开发，想要交流技术或者寻找内推的朋友可以联系我。
               </p>
             </div>
             <div class="card">

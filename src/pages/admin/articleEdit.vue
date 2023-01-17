@@ -16,6 +16,17 @@
         >
       </el-checkbox-group>
     </div>
+    <div class="category">
+      <div class="edit_head">是否公开</div>
+      <el-switch
+        v-model="isOpen"
+        active-text="公开"
+        inactive-text="仅自己"
+        @change="openStateChange"
+      >
+      </el-switch>
+    </div>
+
     <div class="edit_head">简介</div>
     <el-input type="textarea" :rows="5" placeholder="请输入简介" v-model="gist">
     </el-input>
@@ -36,6 +47,7 @@ export default {
   mixins: [checkAdmin],
   data() {
     return {
+      isOpen: true,
       title: "",
       img_file: [],
       date: "",
@@ -75,6 +87,7 @@ export default {
         "Electron",
         "ECharts",
         "WX"
+        // "Onwer"
       ]
     };
   },
@@ -97,10 +110,22 @@ export default {
         });
     }
   },
+  watch: {
+    category(vals) {
+      // 同步switch状态
+      this.isOpen = !vals.includes("Onwer");
+    }
+  },
   methods: {
+    openStateChange(state) {
+      // 过滤Onwer标签
+      if (state === true)
+        this.category = this.category.filter(item => item !== "Onwer");
+      // 添加Onwer标签
+      if (state === false && !this.category.includes("Onwer"))
+        this.category.push("Onwer");
+    },
     $imgAdd(pos, $file) {
-      console.log(pos);
-      console.log($file);
       this.$axios
         .post(webUrl + "uploadImg", {
           data: $file.miniurl

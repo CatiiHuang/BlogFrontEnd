@@ -108,5 +108,6 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "repository": "https://github.com/CatiiHuang/myBlog.git"
 }
