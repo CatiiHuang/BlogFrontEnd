@@ -12,14 +12,14 @@ module.exports = {
     proxyTable: {
       //代理
       "/api": {
-        target: "http://www.catii.top/api/",
+        target: "http://www.catii.cn/api/",
         changeOrigin: true,
         pathRewrite: {
           "^/api": ""
         }
       },
       "/assets": {
-        target: "http://www.catii.top/assets/",
+        target: "http://www.catii.cn/assets/",
         changeOrigin: true,
         pathRewrite: {
           "^/assets": ""
